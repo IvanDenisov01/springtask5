@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Cars</title>
+    <!-- Подключение Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="text-center">Cars List</h2>
+    <!-- Стилизация таблицы с помощью Bootstrap -->
+    <table class="table table-striped table-bordered table-hover">
+        <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Color</th>
+            <th>Year</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Цикл Thymeleaf для отображения каждого автомобиля -->
+        <tr th:each="car : ${cars}">
+            <td th:text="${car.name}"></td>
+            <td th:text="${car.color}"></td>
+            <td th:text="${car.year}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Подключение Bootstrap JS (по желанию для модальных окон и анимаций) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
